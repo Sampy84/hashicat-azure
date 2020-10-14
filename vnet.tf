@@ -1,6 +1,6 @@
 module "network" {
   source  = "app.terraform.io/Pbz84/network/azurerm"
-  resource_group_name = myresourcegroup
+  resource_group_name = azurerm_resource_group.myresourcegroup.name
   version = "3.0.1"
   address_space       = "10.0.0.0/16"
   subnet_prefixes     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
