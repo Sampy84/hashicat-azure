@@ -8,7 +8,6 @@ resource "azurerm_resource_group" "myresourcegroup" {
   
   tags = {
     environment = "Production"
-    department = "devops"
   }
 }
 
@@ -98,6 +97,10 @@ resource "azurerm_virtual_machine" "catapp" {
 
   network_interface_ids         = [azurerm_network_interface.catapp-nic.id]
   delete_os_disk_on_termination = "true"
+
+  tags = {
+    department = "devops"
+  }
 
   storage_image_reference {
     publisher = var.image_publisher
